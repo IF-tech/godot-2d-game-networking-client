@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://d81nedq7w1pr"]
+
+[ext_resource type="Script" path="res://connection_bar.gd" id="1_ny37m"]
+
+[node name="ConnectionBar" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+offset_right = 777.0
+offset_bottom = 40.0
+script = ExtResource("1_ny37m")
+
+[node name="Name" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 40.0
+placeholder_text = "Name"
+
+[node name="IP" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 40.0
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="Color" type="OptionButton" parent="."]
+offset_left = 208.0
+offset_right = 299.0
+offset_bottom = 40.0
+item_count = 3
+selected = 0
+popup/item_0/text = "Red"
+popup/item_0/id = 0
+popup/item_1/text = "Green"
+popup/item_1/id = 1
+popup/item_2/text = "Blue"
+popup/item_2/id = 2
+
+[node name="Host" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 303.0
+offset_right = 403.0
+offset_bottom = 40.0
+text = "Host"
+
+[node name="Join" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 407.0
+offset_right = 507.0
+offset_bottom = 40.0
+text = "Join"
+
+[node name="Status" type="Label" parent="."]
+offset_left = 511.0
+offset_top = 7.0
+offset_right = 627.0
+offset_bottom = 33.0
+size_flags_horizontal = 8
+text = "Status: Waiting"
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
